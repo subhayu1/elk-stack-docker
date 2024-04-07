@@ -28,6 +28,10 @@ filebeat.autodiscover:
             - type: container
               paths:
                 - /var/lib/docker/containers/${data.docker.container.id}/*.log
+              multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}' # Example pattern: matches lines starting with a date, like "2020-01-01"
+              multiline.negate: true
+              multiline.match: after
+
 
 processors:
   - add_cloud_metadata: ~
