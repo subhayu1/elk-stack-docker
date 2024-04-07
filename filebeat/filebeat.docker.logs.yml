@@ -38,7 +38,7 @@ processors:
 
 # Output to Logstash
 output.logstash:
-  hosts: ["logstash:5044"]
+  hosts: ["192.168.1.160:5044"]
 
 #=================================== Kibana ==========================================
 # Enable setting up Kibana
